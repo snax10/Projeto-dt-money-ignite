@@ -6,7 +6,6 @@ import { App } from './App';
 createServer({
   models: {
     transaction: Model,
-
   },
 
   seeds(server) {
@@ -39,10 +38,10 @@ createServer({
       return this.schema.all('transaction')
     })
 
-    this.post('/transaction', (schema, request) => {
+    this.post('/transactions', (schema, request) => {
       const data = JSON.parse(request.requestBody)
 
-      return schema.create('transaction', data);
+      return schema.create('transaction', data)
     })
   }
 })
